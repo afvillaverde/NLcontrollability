@@ -11,15 +11,15 @@
     
 
 # Options
-   1. opts.LC        --> 1 if you want to check the Linearization Condition, 0 if not
-   2. opts.ARC       --> 1 if you want to check the Accessibility Rank Condition, 0 if not
-   3. opts.LARC      --> 1 if you want to check the Lie Algebraic Rank Condition, 0 if not
-   4. opts.LARC      --> 1 if you want to check the Lie Algebraic Rank Condition, 0 if not
-   5. opts.GSC       --> 1 if you want to check Sussmann's General Sufficient Condition, 0 if not
-   6. 'model_name'   --> Name of a .mat file placed in the 'models' folder
-   7. opts.numericLC --> 0 if you want to check the Linearization Condition symbolically, 1 for numeric computation
-   8. opts.maxtime   --> max time for each test in seconds
-   9. x0             --> Specific initial point. If no point is given it would try to compute equilibrium points.
+   1. **opts.LC**        --> 1 if you want to check the Linearization Condition, 0 if not
+   2. **opts.ARC**       --> 1 if you want to check the Accessibility Rank Condition, 0 if not
+   3. **opts.LARC**      --> 1 if you want to check the Lie Algebraic Rank Condition, 0 if not
+   4. **opts.LARC**      --> 1 if you want to check the Lie Algebraic Rank Condition, 0 if not
+   5. **opts.GSC**       --> 1 if you want to check Sussmann's General Sufficient Condition, 0 if not
+   6. **'model_name'**   --> Name of a .mat file placed in the 'models' folder
+   7. **opts.numericLC** --> 0 if you want to check the Linearization Condition symbolically, 1 for numeric computation
+   8. **opts.maxtime**   --> max time for each test in seconds
+   9. **x0**             --> Specific initial point. If no point is given it would try to compute equilibrium points.
       
                
 # Entering the model
