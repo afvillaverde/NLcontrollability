@@ -42,9 +42,9 @@
   length as the state vector x. Example:
   
 	f = [u1;
-		x1;
-		x1^3;
-		x3^2-lambda*x2^2*x1^4];
+	     x1;
+	     x1^3;
+	     x3^2-lambda*x2^2*x1^4];
 		
   Finally, save all the variables in a MAT-file. Example:
   
