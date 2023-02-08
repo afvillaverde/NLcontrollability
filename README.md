@@ -5,21 +5,21 @@
 # To use NLcontrollability you need to:
   1. Download the code.
   2. Open a MATLAB session.
-  3. Edit the 'run.m' file and run it.
+  3. Edit the `run.m` file and run it.
 
-  You can find an example in the 'run.m' file and more in 'ctrl_reach_unit_test_script.m'
+  You can find an example in the  `run.m` file and more in `ctrl_reach_unit_test_script.m`
     
 
 # Options
-   1. **opts.LC**        --> 1 if you want to check the Linearization Condition, 0 if not
-   2. **opts.ARC**       --> 1 if you want to check the Accessibility Rank Condition, 0 if not
-   3. **opts.LARC**      --> 1 if you want to check the Lie Algebraic Rank Condition, 0 if not
-   4. **opts.LARC**      --> 1 if you want to check the Lie Algebraic Rank Condition, 0 if not
-   5. **opts.GSC**       --> 1 if you want to check Sussmann's General Sufficient Condition, 0 if not
-   6. **'model_name'**   --> Name of a .mat file placed in the 'models' folder
-   7. **opts.numericLC** --> 0 if you want to check the Linearization Condition symbolically, 1 for numeric computation
-   8. **opts.maxtime**   --> max time for each test in seconds
-   9. **x0**             --> Specific initial point. If no point is given it would try to compute equilibrium points.
+   - **opts.LC**        --> 1 if you want to check the Linearization Condition, 0 if not
+   - **opts.ARC**       --> 1 if you want to check the Accessibility Rank Condition, 0 if not
+   - **opts.LARC**      --> 1 if you want to check the Lie Algebraic Rank Condition, 0 if not
+   - **opts.LARC**      --> 1 if you want to check the Lie Algebraic Rank Condition, 0 if not
+   - **opts.GSC**       --> 1 if you want to check Sussmann's General Sufficient Condition, 0 if not
+   - **'model_name'**   --> Name of a .mat file placed in the 'models' folder
+   - **opts.numericLC** --> 0 if you want to check the Linearization Condition symbolically, 1 for numeric computation
+   - **opts.maxtime**   --> max time for each test in seconds
+   - **x0**             --> Specific initial point. If no point is given it would try to compute equilibrium points.
       
                
 # Entering the model
@@ -48,7 +48,7 @@
 		
   Finally, save all the variables in a MAT-file. Example:
   
-  save(‘MAPK’,‘x’,‘u’,‘f’);
+  	save(‘MAPK’,‘x’,‘u’,‘f’);
   
 
   This model description format is the same used by the [STRIKE-GOLDD](https://github.com/afvillaverde/strike-goldd) toolbox. 
@@ -56,7 +56,7 @@
 
   
 # Software contents
-  1. **'run.m'**: file where the user enters the model and options. Running it executes the code.
+  1. **`run.m`**: file where the user enters the model and options. Running it executes the code.
   2. **'ctrl_analysis_MAIN.m':** main file; it calls the scripts with the accessibility and controllability tests.
   3. **'ctrl_LC.m'**: implementation of the Linearization Condition.
   4. **'ctrl_ARC.m'**: implementation of the Accessibility Rank Condition.
