@@ -49,6 +49,7 @@
   Finally, save all the variables in a MAT-file. Example:
   
   save(‘MAPK’,‘x’,‘u’,‘f’);
+  
 
   This model description format is the same used by the [STRIKE-GOLDD](https://github.com/afvillaverde/strike-goldd) toolbox. 
   Further details can be found in its [documentation](https://github.com/afvillaverde/strike-goldd/blob/master/STRIKE-GOLDD/doc/STRIKE-GOLDD_manual.pdf).
