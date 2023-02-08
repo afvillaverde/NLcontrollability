@@ -27,18 +27,27 @@
   
   First, all parameters, states, and any other entities (such as inputs or known constants) appearing in the
   model must be defined as symbolic variables. Example:
+  
 	syms x1 x2 x3 x4 lambda u1
+	
   Then we define the state variables, by creating a column vector named x. Example:
+  
 	x = [x1; x2; x3; x4];
+	
   Similarly, we define the known input vector, u. If there are no inputs, enter a blank vector. Example:
+  
 	u = u1; % Or, for more than one input --> u = [u1; u2];
+	
   The model ODEs (dx/dt=...) must also be entered as a column vector, called f, which must have the same
   length as the state vector x. Example:
+  
 	f = [u1;
 		x1;
 		x1^3;
 		x3^2-lambda*x2^2*x1^4];
+		
   Finally, save all the variables in a MAT-file. Example:
+  
   save(‘MAPK’,‘x’,‘u’,‘f’);
 
   This model description format is the same used by the [STRIKE-GOLDD](https://github.com/afvillaverde/strike-goldd) toolbox. 
