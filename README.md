@@ -56,15 +56,15 @@
 
   
 # Software contents
-  1. **`run.m`**: file where the user enters the model and options. Running it executes the code.
-  2. **'ctrl_analysis_MAIN.m':** main file; it calls the scripts with the accessibility and controllability tests.
-  3. **'ctrl_LC.m'**: implementation of the Linearization Condition.
-  4. **'ctrl_ARC.m'**: implementation of the Accessibility Rank Condition.
-  5. **'ctrl_LARC_GSC.m'**: implementation of the Lie Algebraic Rank Condition and Sussmann's General Sufficient Condition.
-  6. **'ctrl_reach_unit_tests_script.m'**: file with some examples ready to run.
-  7. **'Lie_bracket.m'**: auxiliary function that computes the Lie bracket of two vectors w.r.t. a variable.
-  8. **'frac_elem_sym.m'**: auxiliary function that changes a rational equation into its numerator and denominator.
-  9. **'make_affine_known_u.m'**: function that converts a model into affine in inputs form
+  - **`run.m`**: file where the user enters the model and options. Running it executes the code.
+  - **`ctrl_analysis_MAIN.m`:** main file; it calls the scripts with the accessibility and controllability tests.
+  - **`ctrl_LC.m`**: implementation of the Linearization Condition.
+  - **`ctrl_ARC.m`**: implementation of the Accessibility Rank Condition.
+  - **`ctrl_LARC_GSC.m`**: implementation of the Lie Algebraic Rank Condition and Sussmann's General Sufficient Condition.
+  - **`ctrl_reach_unit_tests_script.m`**: file with some examples ready to run.
+  - **`Lie_bracket.m`**: auxiliary function that computes the Lie bracket of two vectors w.r.t. a variable.
+  - **`frac_elem_sym.m`**: auxiliary function that changes a rational equation into its numerator and denominator.
+  - **`make_affine_known_u.m`**: function that converts a model into affine in inputs form
 
 
 # Publications
