@@ -11,7 +11,9 @@
     
 
 # Options
+
   opts.LC        --> 1 if you want to check the Linearization Condition
+  
                      0 if not
   opts.ARC       --> 1 if you want to check the Accessibility Rank Condition
                      0 if not
