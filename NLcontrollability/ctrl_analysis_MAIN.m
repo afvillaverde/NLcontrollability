@@ -85,7 +85,7 @@ fprintf('(Preprocessing completed in %d seconds.)\n ',toc(tStart));
 %=========================================================================%
 %=== Compute the equilibrium point if one is not given ===================%
 logic_eq=0;
-if nargin < 7
+if nargin < 5
     x0=struct2cell(solve(f1==0,x,'Real',true));
     x0=subs(x,x,x0);
     logic_eq=1;
