@@ -83,9 +83,18 @@ if ~isempty(k) % Substitution of parameters
 end
 fprintf('(Preprocessing completed in %d seconds.)\n ',toc(tStart));
 %=========================================================================%
+%===================== Compute jacobians of f1 and f2 ====================%
+t_jac=tic;
+jac_f1 = jacobian(f1,x);
+jac_f2=sym('d',[n,n*nu]);
+for i=1:nu
+    jac_f2(:,(i-1)*n+1:i*n)=jacobian(f2(:,i),x);
+end
+toc(t_jac)
+%=========================================================================%
 %=== Compute the equilibrium point if one is not given ===================%
 logic_eq=0;
-if nargin < 7
+if nargin < 5
     x0=struct2cell(solve(f1==0,x,'Real',true));
     x0=subs(x,x,x0);
     logic_eq=1;
@@ -110,10 +119,10 @@ for i=1:n_x0
         ctrl_LC(modelname,opts,n,f1,f2,x,x0_i)
     end
     if opts.ARC == 1
-        ctrl_ARC(modelname,opts,n,nu,f1,f2,x,x0_i)
+        ctrl_ARC(modelname,opts,n,nu,f1,f2,jac_f1,jac_f2,x,x0_i)
     end
     if opts.LARC == 1 || opts.GSC == 1
-        ctrl_LARC_GSC(modelname,opts,n,nu,f1,f2,x,x0_i)
+        ctrl_LARC_GSC(modelname,opts,n,nu,f1,f2,jac_f1,jac_f2,x,x0_i)
     end
 end
 

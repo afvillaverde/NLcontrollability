@@ -1,4 +1,4 @@
-function ctrl_LARC_GSC(modelname,opts,n,nu,f1,f2,x,x0)
+function ctrl_LARC_GSC(modelname,opts,n,nu,f1,f2,jac_f1,jac_f2,x,x0)
 % ======================================================================= %
 % =========================Function that checks========================== %
 % ===================the Lie Algebraic Rank Condition==================== % 
@@ -41,8 +41,8 @@ fprintf(' %d... ',iLie)
 while increaseLie == 1 && regular == 1 && lasttime < opts.maxtime % Iterations while not involutive 
                                        % and regular
     % ======================NEW BRACKETS COMPUTATION===================== %                                
-    new_brackets = [Lie_bracket(f1,last_brackets,x,n), ... % Construction 
-                    Lie_bracket(f2,last_brackets,x,n)];    % of brackets
+    new_brackets = [Lie_bracket(f1,last_brackets,x,n,jac_f1), ... % Construction 
+                    Lie_bracket(f2,last_brackets,x,n,jac_f2)];    % of brackets
     % Indexes for the new brackets
     new_brackets_index=zeros(nu+1,last_brackets_numb*(nu+1)); 
     for i=0:nu
@@ -127,7 +127,7 @@ base_index = (1:size(base,2));
 
 while increaseLie == 1 && lasttime < opts.maxtime %construct distribution i when x0 not regular
     % ======================NEW BRACKETS COMPUTATION===================== %                                
-    new_brackets = [Lie_bracket(f1,last_brackets,x,n),Lie_bracket(f2,last_brackets,x,n)];
+    new_brackets = [Lie_bracket(f1,last_brackets,x,n,jac_f1),Lie_bracket(f2,last_brackets,x,n,jac_f2)];
     % Indexes for the new brackets
     new_brackets_index=zeros(nu+1,last_brackets_numb*(nu+1));
     for i=0:nu
@@ -235,6 +235,8 @@ if opts.LARC == 1
             fprintf('\n    => More Lie brackets would be needed to see if the model is accessible.');
             fprintf('\n    However, the maximum computation time allowed is reached.');
             fprintf('\n    You can increase it by changing <<opts.maxtime>> (currently opts.maxtime = %d)\n',opts.maxtime);
+            fprintf('\n    GSC can not be computed since LARC stoped before getting a conclusion');
+            opts.GSC = 0;
         else
             fprintf(['   => The LARC is not fulfilled => ' ...
                 'Model %s is inaccessible.\n'], modelname);  
