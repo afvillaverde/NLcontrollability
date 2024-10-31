@@ -1,0 +1,3 @@
+from nl_controllability_py import nl_controllability
+# Without arguments...
+nl_controllability()
