@@ -1,5 +1,5 @@
 # NLcontrollability_py
-  Python toolbox for analysing controllability and accessibility of nonlinear systems.
+  Python scripts for analysing controllability and accessibility of nonlinear systems.
 
 
 # To use NLcontrollability you need to:
